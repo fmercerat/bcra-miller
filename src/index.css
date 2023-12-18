@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+html {
+  font-family: var(--miller-font);
+  background-color: var(--miller-background);
+  color: var(--miller-text);
+}
+
+:root {
+  --miller-font: 'Mulish', sans-serif;
+  
+  --miller-background: #191821;
+  --miller-text: #8a74eb;
+  --miller-primary-color: #ff00aa;
+  
+  --miller-weight-light: 300;
+  --miller-weight-regular: 400;
+  --miller-weight-bold: 500;
+  --miller-weight-black: 1000;
+
+  --miller-font-size-xxs: 0.5rem;
+  --miller-font-size-xs: 0.75rem;
+  --miller-font-size-s: 0.875rem;
+  --miller-font-size-m: 1rem;
+  --miller-font-size-l: 1.25rem;
+  --miller-font-size-xl: 1.5rem;
+  --miller-font-size-xxl: 3rem;
+  --miller-font-size-xxxl: 5rem;
+
+  --miller-h1-size: var(--miller-font-size-xxxl);
+  --miller-h2-size: var(--miller-font-size-xxl);
+  --miller-h3-size: var(--miller-font-size-xl);
+  --miller-h4-size: var(--miller-font-size-l);
+  --miller-h5-size: var(--miller-font-size-m);
+
+  --miller-separation-xs: 0.25rem;
+  --miller-separation-s: 0.5rem;
+  --miller-separation-m: 1rem;
+  --miller-separation-l: 2rem;
+  --miller-separation-xl: 4rem;
+
+  --miller-border-radius: 0.25rem;
+}
