@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { createChart } from 'lightweight-charts';
-import { reservas } from '../res/reservas';
+import { obtenerReservas } from '../res/reservas.js';
 
 export class ReservasBcra extends LitElement {
     static styles = [
@@ -39,6 +39,11 @@ export class ReservasBcra extends LitElement {
     }
 
     firstUpdated() {
+        this.cargar();
+    }
+
+    async cargar() {
+        let reservas = await obtenerReservas();
         // const reservasData = reservas.slice(0, 10);
         const reservasData = reservas;
         const formateador = Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'}).format;
