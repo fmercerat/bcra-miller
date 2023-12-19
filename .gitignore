@@ -24,4 +24,5 @@ dist-ssr
 *.sw?
 
 serv
-public
+
+*.cache
