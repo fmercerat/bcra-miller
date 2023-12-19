@@ -33,8 +33,8 @@ export class ReservasBcra extends LitElement {
     render() {
         return html`
             <div id="chart"></div>
-            <h3>Reservas actuales: ${this.reservasHoy} | Reservas iniciales: ${this.reservasIniciales}</h3>
-            <h3 class="acc">Resultado de Miller: ${this.diferenciaReservas}</h3>
+            <h3>Reservas actuales: ${this.reservasHoy} M | Reservas al 10/12/2023: ${this.reservasIniciales} M</h3>
+            <h3 class="acc">Resultado de Miller: ${this.diferenciaReservas} M</h3>
         `;
     }
 
@@ -46,7 +46,7 @@ export class ReservasBcra extends LitElement {
         let reservas = await obtenerReservas();
         // const reservasData = reservas.slice(0, 10);
         const reservasData = reservas;
-        const formateador = Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'}).format;
+        const formateador = Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format;
         const options = {
             layout: { textColor: 'rgba(255,255,255,0.5)', background: { type: 'solid', color: '#191821FF' } },
             grid: { vertLines: { color: '#FFFFFF00'}, horzLines: { color: '#FFFFFF05'} },
