@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { createChart } from 'lightweight-charts';
-import { obtenerReservas } from '../res/reservas.js';
+import { obtenerReservas, obtenerMillerstones } from '../res/reservas.js';
 
 export class ReservasBcra extends LitElement {
     static styles = [
@@ -44,6 +44,7 @@ export class ReservasBcra extends LitElement {
 
     async cargar() {
         let reservas = await obtenerReservas();
+        let millerstones = await obtenerMillerstones();
         // const reservasData = reservas.slice(0, 10);
         const reservasData = reservas;
         const formateador = Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format;
@@ -78,6 +79,13 @@ export class ReservasBcra extends LitElement {
         this.reservasIniciales = formateador(rI);
         this.diferenciaReservas = `${(rH - rI) > 0 ? '+' : '' }${formateador(rH - rI)}`;
 
+        let markers = [];
+        millerstones.forEach( (millerstone) => {
+            let marker = { time: millerstone.d, position: 'aboveBar', color: '#FF00AA', shape: 'arrowDown', text: millerstone.v, size: 0.1 };
+            markers.push(marker);
+        });
+
+        areaSeries.setMarkers(markers);
         this.requestUpdate();
     }
 }
