@@ -61,7 +61,7 @@ export class ReservasBcra extends LitElement {
         areaSeries.setData( reservasData.map( (reserva) => {
             return { time: reserva.d, value: reserva.v };
         }));
-        var reservasMasa = {
+        let reservasMasa = {
             price: 21209,
             color: '#FF00AA',
             axisLabelVisible: true,
@@ -69,6 +69,16 @@ export class ReservasBcra extends LitElement {
         };
 
         areaSeries.createPriceLine(reservasMasa);
+
+        let costoKicilove = {
+            price: 16000,
+            color: '#F5B847',
+            axisLabelVisible: true,
+            title: 'Umbral de Kicilove'
+        };
+
+        areaSeries.createPriceLine(costoKicilove);
+
         
         chart.timeScale().fitContent();
 
